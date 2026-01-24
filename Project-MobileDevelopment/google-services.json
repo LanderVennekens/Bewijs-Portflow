@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "297582865401",
+    "project_id": "houseexpensesapp",
+    "storage_bucket": "houseexpensesapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:297582865401:android:7872cfbb292ceb6f796b28",
+        "android_client_info": {
+          "package_name": "com.landervennekens.houseexpensesapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "297582865401-7e0m4fth0rcthm6ihg1vs90edjql2e7b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.landervennekens.houseexpensesapp",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "297582865401-bfb4aba6h5ornlrt5ergaat8pm0i2925.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.landervennekens.houseexpensesapp",
+            "certificate_hash": "a630e7f0d6447cd05a868e926af7c2ba676ebb11"
+          }
+        },
+        {
+          "client_id": "297582865401-7ts0blkjqt0p4amul92ls4l7pmog6ver.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJgNn7bueFyd1jNwRwGpAK7ZxJV2z4pr0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "297582865401-7ts0blkjqt0p4amul92ls4l7pmog6ver.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
