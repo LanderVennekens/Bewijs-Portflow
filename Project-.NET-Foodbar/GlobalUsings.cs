@@ -1,0 +1,16 @@
+﻿global using Microsoft.EntityFrameworkCore;
+global using Microsoft.AspNetCore.Mvc;
+global using System.ComponentModel.DataAnnotations;
+global using System.Text.Json.Serialization;
+global using System.Linq.Expressions;
+global using AutoMapper;
+global using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+global using Microsoft.AspNetCore.Identity;
+global using Microsoft.AspNetCore.Authorization;
+global using Microsoft.AspNetCore.Mvc.Rendering;
+global using Restaurant.Data;
+global using Restaurant.Data.Repository;
+global using Restaurant.Data.UnitOfWork;
+global using Restaurant.Models;
+global using Restaurant.Services;
+global using Restaurant.ViewModels;

@@ -1,0 +1,120 @@
+﻿
+using Restaurant.ViewModels.Tafel;
+
+namespace Restaurant.Controllers
+{
+    [Authorize(Roles = "Eigenaar, Zaalverantwoordelijke")]
+    public class TafelController : Controller
+    {
+        private readonly RestaurantContext _context;
+
+        public TafelController(RestaurantContext context)
+        {
+            _context = context;
+        }
+
+        // GET: /Tafel
+        public IActionResult Index()
+        {
+            var tafels = _context.Tafels.ToList();
+            return View(tafels);
+        }
+
+        // GET: /Tafel/Create
+        public IActionResult Create()
+        {
+            var viewModel = new TafelCreateViewModel
+            {
+                Actief = true
+            };
+            return View(viewModel);
+        }
+
+        // POST: /Tafel/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(TafelCreateViewModel viewModel)
+        {
+            if (viewModel.MinAantalPersonen > viewModel.AantalPersonen)
+            {
+                ModelState.AddModelError(nameof(viewModel.MinAantalPersonen), "Minimum aantal personen mag niet hoger zijn dan het aantal personen.");
+            }
+
+            if (_context.Tafels.Any(t => t.TafelNummer == viewModel.TafelNummer))
+            {
+                ModelState.AddModelError(nameof(viewModel.TafelNummer), "Dit tafelnummer bestaat al.");
+            }
+
+            if (ModelState.IsValid)
+            {
+                var tafel = new Tafel
+                {
+                    TafelNummer = viewModel.TafelNummer,
+                    Actief = viewModel.Actief,
+                    // Voeg hier andere properties toe indien nodig
+                };
+                _context.Tafels.Add(tafel);
+                _context.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(viewModel);
+        }
+
+        // GET: /Tafel/Edit/5
+        public IActionResult Edit(int id)
+        {
+            var tafel = _context.Tafels.Find(id);
+            if (tafel == null)
+                return NotFound();
+            return View(tafel);
+        }
+
+        // POST: /Tafel/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(int id, Tafel tafel)
+        {
+            if (id != tafel.Id)
+                return NotFound();
+
+            if (ModelState.IsValid)
+            {
+                _context.Update(tafel);
+                _context.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(tafel);
+        }
+
+        // GET: /Tafel/Delete/id
+        public IActionResult Delete(int id)
+        {
+            var tafel = _context.Tafels.Find(id);
+            if (tafel == null)
+                return NotFound();
+            return View(tafel);
+        }
+
+        // POST: /Tafel/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeleteConfirmed(int id)
+        {
+            var tafel = _context.Tafels.Find(id);
+            if (tafel == null)
+                return NotFound();
+
+            // Controleer of er gekoppelde TafelLijst-entries zijn (reservaties)
+            var heeftKoppelingen = _context.TafelLijsten.Any(tl => tl.TafelId == id);
+            if (heeftKoppelingen)
+            {
+                ModelState.AddModelError("", "Deze tafel kan niet verwijderd worden omdat er reeds één of meerdere reservaties aan gekoppeld zijn. Verwijder eerst de koppelingen of wijs de reservaties aan een andere tafel toe.");
+                return View(tafel);
+            }
+
+            _context.Tafels.Remove(tafel);
+            _context.SaveChanges();
+            return RedirectToAction(nameof(Index));
+        }
+    }
+}
