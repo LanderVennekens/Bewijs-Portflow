@@ -1,0 +1,86 @@
+%% Note: userId in PASSWORD should be unique to enforce one-to-one relationship with USER.
+
+erDiagram
+    USER ||--o{ ORDER : "1..1 -- 0..*"
+    TABLE ||--o{ ORDER : "1..1 -- 0..*"
+    ORDER ||--|{ ORDERITEM : "1..1 -- 1..*"
+    PRODUCT ||--o{ ORDERITEM : "1..1 -- 0..*"
+    GROUP ||--o{ USER : "1..1 -- 0..*"
+    CATEGORY ||--o{ PRODUCT : "1..1 -- 0..*"
+    PRODUCT ||--o{ INVENTORY : "1..1 -- 0..*"
+    ROLE ||--o{ USER : "1..1 -- 0..*"
+    STATUS ||--o{ TABLE : "1..1 -- 0..*"
+    STATUS ||--o{ ORDER : "1..1 -- 0..*"
+    STATUS ||--o{ USER : "1..1 -- 0..*"
+    USER ||--|| PASSWORD : "1..1 -- 1..1"
+
+    USER {
+        int id PK "NNA"
+        string name "NNA, UNIQUE"
+        string email "NA"
+        int groupId FK "NNA, DTN"
+        int roleId FK "NNA, DTN"
+        int statusId FK "NNA, DTN"
+        datetime createdAt "NNA"
+    }
+    PASSWORD {
+        int id PK "NNA"
+        int userId FK "NNA, DTR, UNIQUE"
+        string passwordHash "NNA"
+        string salt "NNA"
+        datetime lastChanged "NA"
+    }
+    ROLE {
+        int id PK "NNA"
+        string name "NNA"
+    }
+    GROUP {
+        int id PK "NNA"
+        string name "NNA"
+        float discount "NA"
+    }
+    TABLE {
+        int id PK "NNA"
+        int number "NNA"
+        int statusId FK "NNA, DTN"
+    }
+    PRODUCT {
+        int id PK "NNA"
+        string name "NNA"
+        int categoryId FK "NNA, DTR"
+        float price "NNA"
+        int popularity "NA"
+    }
+    CATEGORY {
+        int id PK "NNA"
+        string name "NNA"
+    }
+    ORDER {
+        int id PK "NNA"
+        int userId FK "NNA, DTR"
+        int tableId FK "NNA, DTN"
+        int statusId FK "NNA, DTN"
+        float totalPrice "NNA"
+        float priceAfterDiscount "NA"
+        datetime createdAt "NNA"
+        bool isPlacedByStaff "NNA"
+        string remarks "NA"
+    }
+    STATUS {
+        int id PK "NNA"
+        string name "NNA"
+    }
+    ORDERITEM {
+        int id PK "NNA"
+        int orderId FK "NNA, DTR"
+        int productId FK "NNA, DTN"
+        int quantity "NNA"
+        float price "NNA"
+    }
+    INVENTORY {
+        int id PK "NNA"
+        int productId FK "NNA, DTR"
+        int quantity "NNA"
+        int minimumQuantity "NA"
+        datetime lastUpdated "NNA"
+    }
