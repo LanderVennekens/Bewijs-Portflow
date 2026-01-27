@@ -1,0 +1,285 @@
+{
+  "Titel": "Immo te koop in Dessel (2480)",
+  "Houses": [
+    {
+      "Type": "Huis",
+      "Adres": "Nieuwedijk 32, 2480 Dessel",
+      "Prijs": "€ 365.000",
+      "Eigenschappen": {
+        "Bewoonbare oppervlakte (m2)": "200",
+        "Perceeloppervlakte (m2)": "871",
+        "Slaapkamers": "4",
+        "Badkamers": "1",
+        "Parkeerplaatsen": "onbekend",
+        "EPC-label": "D"
+      }
+    },
+    {
+      "Type": "Appartement",
+      "Adres": "Kwademeer 21, 2480 Dessel",
+      "Prijs": "€ 305.000",
+      "Eigenschappen": {
+        "Bewoonbare oppervlakte (m2)": "87",
+        "Slaapkamers": "2",
+        "Badkamers": "1",
+        "Parkeerplaatsen": "onbekend",
+        "EPC-label": "A"
+      }
+    },
+    {
+      "Type": "Appartement",
+      "Adres": "Kolkstraat 41, 2480 Dessel",
+      "Prijs": "€ 210.000",
+      "Eigenschappen": {
+        "Bewoonbare oppervlakte (m2)": "104",
+        "Slaapkamers": "2",
+        "Badkamers": "1",
+        "Parkeerplaatsen": "onbekend",
+        "EPC-label": "D"
+      }
+    },
+    {
+      "Type": "Appartement",
+      "Adres": "Kolkstraat 39, 2480 Dessel",
+      "Prijs": "€ 210.000",
+      "Eigenschappen": {
+        "Bewoonbare oppervlakte (m2)": "120",
+        "Perceeloppervlakte (m2)": "339",
+        "Slaapkamers": "2",
+        "Badkamers": "1",
+        "Parkeerplaatsen": "onbekend",
+        "EPC-label": "D"
+      }
+    },
+    {
+      "Type": "Huis",
+      "Adres": "Oude Markt 2, 2480 Dessel",
+      "Prijs": "€ 325.000",
+      "Eigenschappen": {
+        "Bewoonbare oppervlakte (m2)": "232",
+        "Perceeloppervlakte (m2)": "481",
+        "Slaapkamers": "3",
+        "Badkamers": "1",
+        "Parkeerplaatsen": "onbekend",
+        "EPC-label": "D"
+      }
+    },
+    {
+      "Type": "Huis",
+      "Adres": "Oude velden 48, 2480 Dessel",
+      "Prijs": "€ 449.000",
+      "Eigenschappen": {
+        "Bewoonbare oppervlakte (m2)": "172",
+        "Perceeloppervlakte (m2)": "422",
+        "Slaapkamers": "3",
+        "Badkamers": "onbekend",
+        "Parkeerplaatsen": "onbekend",
+        "EPC-label": "onbekend"
+      }
+    },
+    {
+      "Type": "Huis",
+      "Adres": "Gemeentedijk 19, 2480 Dessel",
+      "Prijs": "€ 399.000",
+      "Eigenschappen": {
+        "Bewoonbare oppervlakte (m2)": "212",
+        "Perceeloppervlakte (m2)": "878",
+        "Slaapkamers": "4",
+        "Badkamers": "1",
+        "Parkeerplaatsen": "onbekend",
+        "EPC-label": "C"
+      }
+    },
+    {
+      "Type": "Appartement",
+      "Adres": "Meistraat 137, 2480 Dessel",
+      "Prijs": "€ 239.000",
+      "Eigenschappen": {
+        "Bewoonbare oppervlakte (m2)": "75",
+        "Slaapkamers": "1",
+        "Badkamers": "1",
+        "Parkeerplaatsen": "onbekend",
+        "EPC-label": "B"
+      }
+    },
+    {
+      "Type": "Huis",
+      "Adres": "Hofstraat 12, 2480 Dessel",
+      "Prijs": "€ 335.000",
+      "Eigenschappen": {
+        "Bewoonbare oppervlakte (m2)": "250",
+        "Perceeloppervlakte (m2)": "378",
+        "Slaapkamers": "3",
+        "Badkamers": "1",
+        "Parkeerplaatsen": "onbekend",
+        "EPC-label": "C"
+      }
+    },
+    {
+      "Type": "Huis",
+      "Adres": "Broekstraat 16, 2480 Dessel",
+      "Prijs": "€ 299.000",
+      "Eigenschappen": {
+        "Bewoonbare oppervlakte (m2)": "120",
+        "Perceeloppervlakte (m2)": "440",
+        "Slaapkamers": "4",
+        "Badkamers": "1",
+        "Parkeerplaatsen": "onbekend",
+        "EPC-label": "C"
+      }
+    },
+    {
+      "Type": "Huis",
+      "Adres": "Hulststraat 13, 2480 Dessel",
+      "Prijs": "€ 349.000",
+      "Eigenschappen": {
+        "Bewoonbare oppervlakte (m2)": "147",
+        "Perceeloppervlakte (m2)": "675",
+        "Slaapkamers": "3",
+        "Badkamers": "1",
+        "Parkeerplaatsen": "onbekend",
+        "EPC-label": "F"
+      }
+    },
+    {
+      "Type": "Appartement",
+      "Adres": "Kerkstraat 6, 2480 Dessel",
+      "Prijs": "€ 281.150",
+      "Eigenschappen": {
+        "Bewoonbare oppervlakte (m2)": "76",
+        "Slaapkamers": "1",
+        "Badkamers": "1",
+        "Parkeerplaatsen": "onbekend",
+        "EPC-label": "onbekend"
+      }
+    },
+    {
+      "Type": "Appartement",
+      "Adres": "Kerkstraat 8, 2480 Dessel",
+      "Prijs": "€ 301.900",
+      "Eigenschappen": {
+        "Bewoonbare oppervlakte (m2)": "84",
+        "Slaapkamers": "1",
+        "Badkamers": "1",
+        "Parkeerplaatsen": "onbekend",
+        "EPC-label": "onbekend"
+      }
+    },
+    {
+      "Type": "Huis",
+      "Adres": "Hannekestraat 12, 2480 Dessel",
+      "Prijs": "€ 319.000",
+      "Eigenschappen": {
+        "Bewoonbare oppervlakte (m2)": "227",
+        "Perceeloppervlakte (m2)": "161",
+        "Slaapkamers": "4",
+        "Badkamers": "1",
+        "Parkeerplaatsen": "onbekend",
+        "EPC-label": "B"
+      }
+    },
+    {
+      "Type": "Commercieel",
+      "Adres": "Molenhoek 6, 2480 Dessel",
+      "Prijs": "€ 649.000",
+      "Eigenschappen": {
+        "Bewoonbare oppervlakte (m2)": "548",
+        "Perceeloppervlakte (m2)": "3.337",
+        "Parkeerplaatsen": "onbekend",
+        "EPC-label": "C",
+        "Slaapkamers": "onbekend",
+        "Badkamers": "onbekend"
+      }
+    },
+    {
+      "Type": "Commercieel",
+      "Adres": "Meistraat 141, 2480 Dessel",
+      "Prijs": "€ 219.000",
+      "Eigenschappen": {
+        "Bewoonbare oppervlakte (m2)": "171",
+        "Perceeloppervlakte (m2)": "581",
+        "Parkeerplaatsen": "onbekend",
+        "EPC-label": "C",
+        "Slaapkamers": "onbekend",
+        "Badkamers": "onbekend"
+      }
+    },
+    {
+      "Type": "Huis",
+      "Adres": "Driesstraat 2, 2480 Dessel",
+      "Prijs": "€ 399.000",
+      "Eigenschappen": {
+        "Bewoonbare oppervlakte (m2)": "166",
+        "Perceeloppervlakte (m2)": "828",
+        "Slaapkamers": "3",
+        "Badkamers": "1",
+        "Parkeerplaatsen": "onbekend",
+        "EPC-label": "C"
+      }
+    },
+    {
+      "Type": "Huis",
+      "Adres": "Warande 81, 2480 Dessel",
+      "Prijs": "€ 3.995.000",
+      "Eigenschappen": {
+        "Bewoonbare oppervlakte (m2)": "568",
+        "Perceeloppervlakte (m2)": "1.500",
+        "Slaapkamers": "5",
+        "Badkamers": "3",
+        "Parkeerplaatsen": "onbekend",
+        "EPC-label": "B"
+      }
+    },
+    {
+      "Type": "Appartement",
+      "Adres": "Gietesbos 23, 2480 Dessel",
+      "Prijs": "€ 335.000",
+      "Eigenschappen": {
+        "Bewoonbare oppervlakte (m2)": "104",
+        "Slaapkamers": "2",
+        "Badkamers": "onbekend",
+        "Parkeerplaatsen": "onbekend",
+        "EPC-label": "onbekend"
+      }
+    },
+    {
+      "Type": "Huis",
+      "Adres": "Strunkelstraat 24, 2480 Dessel",
+      "Prijs": "€ 319.000",
+      "Eigenschappen": {
+        "Bewoonbare oppervlakte (m2)": "160",
+        "Perceeloppervlakte (m2)": "471",
+        "Slaapkamers": "3",
+        "Badkamers": "1",
+        "Parkeerplaatsen": "onbekend",
+        "EPC-label": "D"
+      }
+    },
+    {
+      "Type": "Huis",
+      "Adres": "Meistraat 172, 2480 Dessel",
+      "Prijs": "€ 319.000",
+      "Eigenschappen": {
+        "Bewoonbare oppervlakte (m2)": "220",
+        "Perceeloppervlakte (m2)": "690",
+        "Slaapkamers": "5",
+        "Badkamers": "1",
+        "Parkeerplaatsen": "onbekend",
+        "EPC-label": "E"
+      }
+    },
+    {
+      "Type": "Huis",
+      "Adres": "Zanddijk 17, 2480 Dessel",
+      "Prijs": "€ 599.995",
+      "Eigenschappen": {
+        "Bewoonbare oppervlakte (m2)": "250",
+        "Perceeloppervlakte (m2)": "2.033",
+        "Slaapkamers": "4",
+        "Badkamers": "2",
+        "Parkeerplaatsen": "onbekend",
+        "EPC-label": "C"
+      }
+    }
+  ]
+}

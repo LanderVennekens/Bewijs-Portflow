@@ -1,0 +1,21 @@
+{
+  "name": "deel2-astro-frontend",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.16.6",
+    "flowbite": "^4.0.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@tailwindcss/vite": "^4.1.18",
+    "@types/node": "^25.0.3",
+    "tailwindcss": "^4.1.18"
+  }
+}

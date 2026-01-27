@@ -1,0 +1,69 @@
+<div class="w-full">
+  <label for="discount-slider" class="block mb-2 text-sm font-medium text-gray-900">
+    Minimum discount: <span id="discount-value" class="font-semibold text-blue-600">0%</span>
+  </label>
+
+  <div class="relative">
+    <!-- Indicator centered ON the track -->
+    <button
+      id="slider-indicator"
+      type="button"
+      aria-hidden="true"
+      class="pointer-events-none absolute top-1/2 left-0 z-10 bg-blue-600 rounded-full w-6 h-6 shadow transform -translate-x-1/2 -translate-y-1/2"
+      style="left: 0%;"
+    ></button>
+
+    <input
+      id="discount-slider"
+      type="range"
+      min="0"
+      max="100"
+      value="0"
+      class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+    />
+  </div>
+
+  <div class="flex justify-between text-xs text-gray-500 mt-2">
+    <span>0%</span>
+    <span>25%</span>
+    <span>50%</span>
+    <span>75%</span>
+    <span>100%</span>
+  </div>
+</div>
+
+<script>
+  (function () {
+    if (typeof document === 'undefined') return;
+
+    const slider = document.getElementById('discount-slider');
+    const valueSpan = document.getElementById('discount-value');
+    const indicator = document.getElementById('slider-indicator');
+
+    if (!slider || !valueSpan || !indicator) return;
+
+    const update = () => {
+      const min = parseInt(slider.min || '0', 10);
+      const max = parseInt(slider.max || '100', 10);
+      const val = parseInt(slider.value || '0', 10);
+      const pct = (val - min) / (max - min);
+
+      // update displayed value (label)
+      valueSpan.textContent = val + '%';
+
+      // position indicator horizontally; it is vertically centered via top-1/2 & -translate-y-1/2
+      indicator.style.left = (pct * 100) + '%';
+
+      // trigger global filters if present
+      if (typeof window.applyFilters === 'function') window.applyFilters();
+    };
+
+    const onResize = () => update();
+
+    slider.addEventListener('input', update);
+    window.addEventListener('resize', onResize);
+
+    // initialize
+    update();
+  })();
+</script>

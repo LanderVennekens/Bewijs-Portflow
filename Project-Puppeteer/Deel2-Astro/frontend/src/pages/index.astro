@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SearchInput from '../components/SearchInput.astro';
+import DiscountRangeSlider from '../components/DiscountRangeSlider.astro';
+import GameList from '../components/GameList.astro';
+---
+
+<Layout>
+  <main class="max-w-7xl mx-auto px-4 py-8">
+    <h1 class="text-3xl font-semibold text-gray-900 mb-6">Game discount checker</h1>
+
+    <!-- Filters row: search left, slider right (responsive) -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center mb-6">
+      <div class="md:col-span-2">
+        <SearchInput />
+      </div>
+      <div class="md:col-span-1">
+        <DiscountRangeSlider />
+      </div>
+    </div>
+
+    <GameList />
+  </main>
+
+  <script>
+    window.applyFilters = function () {
+      const searchEl = document.getElementById('search-input');
+      const sliderEl = document.getElementById('discount-slider');
+
+      const term = searchEl ? String(searchEl.value).toLowerCase().trim() : '';
+      const minDiscount = sliderEl ? parseInt(sliderEl.value || '0', 10) : 0;
+
+      const rows = document.querySelectorAll('.game-row');
+      rows.forEach(row => {
+        const titleEl = row.querySelector('.game-title');
+        const discountEl = row.querySelector('.game-discount');
+
+        const title = titleEl ? String(titleEl.textContent || '').toLowerCase() : '';
+        let discountText = discountEl ? String(discountEl.textContent || '').trim() : 'N/A';
+        const discount = discountText === 'N/A' ? 0 : parseInt(discountText.replace('%','')) || 0;
+
+        const matchesSearch = term === '' || title.includes(term);
+        const matchesDiscount = discount >= minDiscount;
+
+        row.style.display = (matchesSearch && matchesDiscount) ? '' : 'none';
+      });
+    };
+
+    // Optional: run on first load to apply slider default
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof window.applyFilters === 'function') window.applyFilters();
+    });
+  </script>
+</Layout>

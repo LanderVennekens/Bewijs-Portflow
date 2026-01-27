@@ -1,0 +1,36 @@
+---
+import steamDeals from '../data/steam-deals.json';
+---
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+  <table class="w-full text-sm text-left text-gray-500">
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+      <tr>
+        <th scope="col" class="px-6 py-3">Game Title</th>
+        <th scope="col" class="px-6 py-3 text-right">Discount</th>
+      </tr>
+    </thead>
+    <tbody>
+      {steamDeals.map(game => {
+        const discount = game.discountPercentage ?? 0;
+        return (
+          <tr class="game-row bg-white border-b hover:bg-gray-50">
+            <th scope="row" class="game-title px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+              {game.title}
+            </th>
+            <td class="px-6 py-4 text-right">
+              {game.isDiscounted ? (
+                <span class="game-discount inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800">
+                  {discount}%
+                </span>
+              ) : (
+                <span class="game-discount inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-800">
+                  N/A
+                </span>
+              )}
+            </td>
+          </tr>
+        );
+      })}
+    </tbody>
+  </table>
+</div>
