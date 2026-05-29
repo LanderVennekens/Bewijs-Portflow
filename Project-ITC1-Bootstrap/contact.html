@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link rel="stylesheet" type="text/css" href="sf.css" />
+    <link rel="stylesheet" type="text/css" href="form.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <title>SportFusion Camp :: contact</title>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-primary-subtle">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a href="index.html"><img src="images/logo-sportfusion-camp.png" alt="Logo SportFusion Camp"
+                    height="25"></a>
+              <a class="nav-link" href="overzicht-zwemlessen.html">Zwemlessen</a>
+              <a class="nav-link" href="overzicht-sportkampen.html">Sportkampen</a>
+              <a class="nav-link" href="overzicht-voetbalkampen.html">Voetbalkampen</a>
+              <a class="nav-link" href="contact.html">Contact</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+    <main>
+        <div class="container">
+            <div class="row">
+            <div class="col">
+                <h3>Inschrijven</h3>
+                <hr>
+                <h2>Inschrijvingsformulier</h2>
+                <form action="verwerk_inschrijving.php" method="post">
+                    <div class="col">
+                    <h3>Soort Kamp</h3>
+                    <div>
+                        <label for="kamp_keuze" class="form-label">Selecteer het kamp:</label>
+                        <select id="kamp_keuze" name="kamp_keuze" class="form-select" required>
+                            <option value="zwemlessen">Zwemlessen</option>
+                            <option value="voetbalkamp">Voetbalkamp</option>
+                            <option value="sportkamp">Sportkamp</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="naam_kamp" class="form-label">Naam kamp:</label>
+                        <input type="text" id="naam_kamp" name="naam_kamp" class="form-control" required>
+                    </div>
+                    </div>
+                    <div class="col">
+                    <h3>Gegevens Deelnemer</h3>
+                    <div>
+                        <label for="naam_deelnemer" class="form-label">Naam deelnemer:</label>
+                        <input type="text" id="naam_deelnemer" name="naam_deelnemer" class="form-control" required>
+                    </div>
+                    <div>
+                        <label for="geboortedatum" class="form-label">Geboortedatum:</label>
+                        <input type="date" id="geboortedatum" name="geboortedatum" class="form-control" required>
+                    </div>
+                    <div>
+                        <label for="medische_geschiedenis" class="form-label">Medische geschiedenis (indien van toepassing):</label>
+                        <textarea id="medische_geschiedenis" name="medische_geschiedenis" class="form-control"></textarea>
+                    </div>
+                    </div>
+                    <div class="col">
+                    <h3>Gegevens Ouders/Verzorgers</h3>
+                    <div>
+                        <label for="naam_ouder" class="form-label">Naam ouder/verzorger:</label>
+                        <input type="text" id="naam_ouder" name="naam_ouder" class="form-control" required>
+                    </div>
+                    <div>
+                        <label for="email_ouder" class="form-label">E-mail ouder/verzorger:</label>
+                        <input type="email" id="email_ouder" name="email_ouder" class="form-control" required>
+                    </div>
+                    <div>
+                        <label for="telefoon_ouder" class="form-label">Telefoon ouder/verzorger:</label>
+                        <input type="tel" id="telefoon_ouder" name="telefoon_ouder" class="form-control" required>
+                    </div>
+                    </div>
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Inschrijven">
+                </form>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col"><img src="images/jeremiah-lawrence-I-GLN4EB3GU-unsplash.jpg" alt="Prinses" height="200"></div>
+                <div class="col"><img src="images/jeremiah-lawrence-QBN_X4H0x9U-unsplash.jpg" alt="Zwemmen" height="200"></div>
+                <div class="col"><img src="images/adria-crehuet-cano-LIhB1_mAGhY-unsplash.jpg" alt="Voetbal" height="200"></div>
+            </div>
+            <br>
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                      <h2 class="card-title">Contactgegevens</h2>
+                      <p class="card-text">Heeft u vragen of opmerkingen? Neem gerust contact met ons op:</p>
+                      <p class="card-text">Telefoon: (123) 456-7890</p>
+                      <p class="card-text">E-mail: info@SportFusionCamp.com</p>
+                    </div>
+                  </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                      <h2 class="card-title">Inschrijven</h2>
+                      <p class="card-text">U kunt uw kind inschrijven voor onze sportkampen door het inschrijvingsformulier in te vullen op onze <a href="contact.html">contactpagina</a>.</p>
+                    </div>
+                  </div>
+                  
+            </div>
+        </div>
+    </div>
+    <br>
+        </div>
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top alert alert-primary">
+            <div class="col-md-4 d-flex align-items-center">
+              <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+                <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+              </a>
+              <span class="mb-3 mb-md-0 text-body-secondary">© Sportfusion Camp</span>
+            </div>
+          </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

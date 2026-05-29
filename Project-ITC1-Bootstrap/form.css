@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+.msg-success{background-color:#EBF8EC;border:1px solid #009900;border-radius:6px 6px 6px 6px;color:#257233;font-size:10px;font-weight:400;margin:0 0 10px;padding:10px;text-align:center;}
+.msg-fail{background-color:#F6EFF4;border:1px solid #994881;border-radius:6px 6px 6px 6px;color:#874E74;font-size:10px;font-weight:400;margin:0 0 10px;padding:10px;text-align:center;}
+.buttons{height:32px;padding:0;}
+
+div.formrowcollection {margin-top: 5px;width:auto;}
+div.firstrow{border-top: 1px solid #E4E4E4;margin-top: 5px;background-color:#069;border-bottom:1px solid #E4E4E4;border-top:1px solid #FFF;overflow:hidden;padding:4px 5px;min-height:25px;} /* height:1%; */
+div.formrow{background-color:#069;border-bottom:1px solid #E4E4E4;overflow:hidden;padding:4px 5px;min-height:25px;}  /* height:1%; border-top:1px solid #FFF; */
+div.lastrow{margin-bottom:20px;}
+
+form fieldset {border: 0 none;padding-bottom: 10px;}
+
+form div.highlighted {background-color: #E8E8E8 !important;}
+div.formrow_disabled {color: #B6B6B6;}
+
+input,textarea,select{color:#000000;font-size: 11px;}
+input:focus,textbox:focus{color:#333333;}
+
+input.error,textarea.error,select.error,input[type="password"].error,input[type="text"].error{border: 3px dotted #C30001;}
+form label.errorfrm{color: #fff;background: none repeat scroll 0 0 #C81526;color: #FFFFFF;font-size: 11px;line-height: 1.2em;margin-bottom: 5px;padding: 5px;text-align: left;   text-transform: uppercase;border-radius:4px;}
+
+form {width: auto; padding: 2px 10px 5px; }
+form label {width: auto;display: inline-block;line-height: 2.2;vertical-align: top;	padding-right: 10px;}
+form label.errorfrm, #signupForm input.submit {margin-left: 25px; }
+
+form div.errorfrm{color: #C30001;}
+form div.example{color: #fff;font-style: italic;padding-left: 25px;}
+
+textarea{background-color:#FDEEEF;border:1px solid #DDDEDF;margin:2px 0 10px;padding:6px 6px 5px;resize:vertical}
+textarea:focus{background-color:#FFF;border:1px solid #666;}
+
+input[type="text"]{background-color:#FDEEEF;border:1px solid #DDDEDF;margin:2px 0 10px;padding:4px 6px 5px;}
+input[type="text"]:focus{background-color:#FFF;border:1px solid #666;}
+input[type="text"]:active{border:1px solid #666;}
+
+
+input[type="password"]{background-color:#FDEEEF;border:1px solid #DDDEDF;margin:2px 0 10px;padding:4px 6px 5px;}
+input[type="password"]:focus{background-color:#FFF;border:1px solid #666;}
+input[type="password"]:active{border:1px solid #666;}
+
+/*
+input[type="submit"] {background-color: #87CC18;background-image: -moz-linear-gradient(0% 100% 90deg, #87CC18, #B6DF48);background-position: 0 0;border: 0 none;color: #FFFFFF;float: none;margin-right: 0;    padding-left: 14px;text-shadow: 0 1px 0 #7CBD14;}
+input[type="submit"]:hover{background-color:#EFF8FA;border:1px solid #666;cursor:pointer;}
+input[type="submit"]:active{background-color:#FBFBFB;border:1px solid #87C9F3;cursor:pointer;}
+*/
+
+input[type="checkbox"]{margin:4px 8px 10px 0;}
+
+select{background-color:#FDEEEF;border:1px solid #DDDEDF;cursor:pointer;height:28px;margin:2px 0 10px;outline:medium none;padding:3px 4px 2px 6px;}
+select:focus{background-color:#FFF;border:1px solid #D6D9DC;}
+select:active{border:1px solid #ECE58C;}
+
+option{background-color:#FFF;border:0 solid #E2E4E7;outline:medium none;padding:2px 10px;}
+
+input.small[type="submit"]{background-position:8px 4px;font-size:13px;height:26px;margin-top:2px;padding:4px 14px 6px 30px;}
+
