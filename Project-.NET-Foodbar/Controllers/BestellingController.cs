@@ -26,7 +26,7 @@ namespace Restaurant.Controllers
             var userRole = User.FindFirst(System.Security.Claims.ClaimTypes.Role)?.Value;
             var filteredBestellingen = FilterBestellingenByUserRole(userRole, bestellingen);
             var statussen = (await _unitOfWork.Statussen.GetAllAsync())
-                .OrderBy(s => customOrder.IndexOf(s.Naam)) // Aangepaste volgorde
+                .OrderBy(s => customOrder.IndexOf(s.Naam))
                 .ToList();
             var statusColors = new Dictionary<int, string>
             {
@@ -118,17 +118,14 @@ namespace Restaurant.Controllers
         [HttpPost("Bestelling/Create/{reservatieId:int}")]
         public async Task<IActionResult> Create(BestellingCreateViewModel model, string CartItemsJson)
         {
-            // Restore cart from hidden field
             var cartItems = new List<CartItemWithProductViewModel>();
             if (!string.IsNullOrEmpty(CartItemsJson))
             {
-                // Deserialize to a simple DTO (ProductId, Aantal)
                 var simpleCart = System.Text.Json.JsonSerializer.Deserialize<List<CartItemWithProductViewModel>>(
                     CartItemsJson,
                     new System.Text.Json.JsonSerializerOptions { PropertyNameCaseInsensitive = true }
                 ) ?? new List<CartItemWithProductViewModel>();
 
-                // Rebuild CartItemsWithProduct for display and processing
                 foreach (var item in simpleCart)
                 {
                     var product = await _unitOfWork.Producten.GetByIdWithPriceAsync(item.ProductId);
@@ -149,19 +146,16 @@ namespace Restaurant.Controllers
             model.CartItemsWithProduct = cartItems;
             model.TotaalBedrag = cartItems.Sum(ci => ci.Aantal * ci.Prijs);
 
-            // re-check table assignment using the model's ReservatieId
             model.HasAssignedTable = await _unitOfWork.TafelLijsten.HasAssignedTableAsync(model.ReservatieId);
 
             if (!model.HasAssignedTable)
             {
-                // Re-populate menu for redisplay
                 model.MenuTypes = await GetMenuTypesAsync();
 
                 ViewBag.CartItemsJson = CartItemsJson ?? "[]";
                 return View(model);
             }
 
-            // Process the order
             int drinkCount = 0;
             int foodCount = 0;
 
@@ -187,7 +181,6 @@ namespace Restaurant.Controllers
             if (result > 0)
             {
                 var currentUser = User.Identity?.Name ?? "Onbekend";
-                // Notify relevant staff based on order contents
                 if (drinkCount > 0)
                 {
                     await _hubContext.Clients.Group("Ober").SendAsync("NieuweBestelling", $"{drinkCount} Nieuwe drankbestelling{(drinkCount > 1 ? "en" : "")}");
@@ -199,18 +192,14 @@ namespace Restaurant.Controllers
                     await _hubContext.Clients.Group("Kok").SendAsync("ForceReloadBestellingen", currentUser);
                 }
 
-                // Clear cart and redirect to confirmation
                 ClearCart();
 
-                // TODO: Bevestigingsmail sturen en notificaties verwerken
 
                 return RedirectToAction("Bevestiging", new { reservatieId = model.ReservatieId });
             }
             else
             {
-                // Handle failure (e.g., show error, redisplay form, etc.)
                 ModelState.AddModelError("", "Er is een fout opgetreden bij het verwerken van de bestelling.");
-                // Re-populate menu for redisplay
                 model.MenuTypes = await GetMenuTypesAsync();
 
                 ViewBag.CartItemsJson = CartItemsJson ?? "[]";
@@ -263,7 +252,6 @@ namespace Restaurant.Controllers
             switch (userRole)
             {
                 case "Ober":
-                    // load all category types for the products in the bestellingen
                     var categorieTypeLookup = bestellingen
                         .Select(b => b.Product.CategorieId)
                         .Distinct()
